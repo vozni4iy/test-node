@@ -1,0 +1,61 @@
+{
+  "name": "my-node-project",
+  "version": "1.0.0",
+  "description": "A test project for learning Node.js and Express.",
+  "scripts": {
+    "start": "node --loader ts-node/esm src/app.ts",
+    "build": "tsc",
+    "build:tsc": "tsc --build",
+    "build:clean": "tsc --build --clean",
+    "start:prod": "node dist/app.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "dev": "nodemon",
+    "sync": "browser-sync start --proxy 'http://127.0.0.1:5001' --files='['./app.ts']' --reload-delay=10000 --log-connections=true",
+    "concurrently": "concurrently --kill-others \"npm run dev\" \"npm run sync\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "typescript"
+  ],
+  "author": "Ihor Skakun",
+  "license": "ISC",
+  "dependencies": {
+    "@thebguy/multer-gridfs-storage": "^5.0.3",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "gridfs-stream": "^1.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.1",
+    "multer": "^1.4.4-lts.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/browser-sync": "^2.29.0",
+    "@types/express": "^4.17.21",
+    "@types/gridfs-stream": "^0.5.39",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "browser-sync": "^3.0.2",
+    "browser-sync-middleware": "^1.1.4",
+    "concurrently": "^8.2.2",
+    "connect-browser-sync": "^2.1.0",
+    "eslint": "^8.56.0",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
